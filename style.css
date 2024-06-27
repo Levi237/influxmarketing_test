@@ -37,21 +37,24 @@ p {
     font-weight: 300;
     line-height: 26px;
 }
-p.info {
-    text-decoration-line: underline;
+.nav.services {
+    li::after {
+        content: url(arrow.svg);
+    }
 }
-button {
-    color: var(--Black, #000);
-    /* Button */
-    font-family: "ivypresto-display", serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 35px;
-    letter-spacing: 0.05em;
-    text-transform: capitalize;
-}
-
-li::after {
-    content: url(arrow.svg);
+.container.services {
+    p {
+        text-decoration-line: underline;
+    }
+    button {
+        color: var(--Black, #000);
+        /* Button */
+        font-family: "ivypresto-display", serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 35px;
+        letter-spacing: 0.05em;
+        text-transform: capitalize;
+    }
 }
