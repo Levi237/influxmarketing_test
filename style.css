@@ -1,0 +1,40 @@
+:root {
+    --hsl-black: 0, 0%, 0%;
+    --hsl-peach: 11, 80%, 92%;
+    --Black: hsl(--hsl-black);
+    --Peach: hsl(--hsl-peach);
+    --side-pad: 100px;
+}
+h2 {
+    color: var(--Black, #000);
+
+    /* Title Med */
+    font-family:  "ivypresto-display", serif;
+    font-size: 55px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 60px; 
+}
+p {
+    color: var(--Black, #000);
+
+    font-family: "poppins";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 26px;
+}
+p.info {
+    text-decoration-line: underline;
+}
+button {
+    color: var(--Black, #000);
+    /* Button */
+    font-family: "ivypresto-display", serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 35px;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+}
