@@ -90,21 +90,57 @@
         const boxParent = document.getElementById("services-info");
         const createBox = document.createElement("div");
             createBox.classList.add("box");
+            if(k == 0) createBox.classList.add('active');
             const createTitle = document.createElement("h2");
                 createTitle.appendChild(document.createTextNode(`${service.title}`));
             createBox.appendChild(createTitle);
             const createDescription = document.createElement("p");
                 createDescription.appendChild(document.createTextNode(`${service.description}`));
             createBox.appendChild(createDescription);  
-                boxParent.appendChild(createBox);
+
+            const createLink = document.createElement("a");
+                createLink.setAttribute("href", `${service.link}`);
+                createLink.setAttribute("target", '_blank');
+                const createSpan = document.createElement("span");
+                createSpan.appendChild(document.createTextNode(`${service.title}`));
+                createLink.appendChild(createSpan); 
+
+                const xmlns = "http://www.w3.org/2000/svg";
+                const boxWidth = 18;
+                const boxHeight = 10;
+                const createSVG = document.createElementNS(xmlns, "svg");
+                    createSVG.setAttributeNS(null, "viewBox", "0 0 " + boxWidth + " " + boxHeight);
+                    createSVG.setAttributeNS(null, "width", "100%");
+                    createSVG.style.display = "inlin-block";
+                    const pathSVG = document.createElementNS(xmlns, "path");
+                        pathSVG.setAttributeNS(null, "d", `M12.9 1L17.4 5M17.4 5L12.9 9M17.4 5H1.40002`);
+                        pathSVG.setAttribute("stroke", "#D3A79D");
+                        pathSVG.setAttribute("stroke-width", "1.2");
+                        pathSVG.setAttribute("stroke-linecap","round");
+                        pathSVG.setAttribute("stroke-linejoin", "round");
+                    createSVG.appendChild(pathSVG);
+
+                createLink.appendChild(createSVG); 
+            createBox.appendChild(createLink);  
+
+
+            boxParent.appendChild(createBox);
     });
 
 
     const tabs = document.querySelectorAll(".tab");
+    const boxes = document.querySelectorAll(".box");
 
-    tabs.forEach(tab => {
+    tabs.forEach((tab, key) => {
         tab.addEventListener('click', () => {
-            tabs.forEach(tabThis => tabThis.classList.remove("active"));
+            tabs.forEach(thisTab => thisTab.classList.remove("active"));
+            boxes.forEach((thisBox, k) => {
+                thisBox.classList.remove("active")
+                if (key == k){
+                    thisBox.classList.add("active")
+                }
+
+            });
             tab.classList.add("active");
         });
     });

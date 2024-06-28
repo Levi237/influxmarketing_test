@@ -193,6 +193,14 @@ p {
         background-size: cover;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         
+        margin-left: -724px;
+        opacity: 0;
+        transition: .4s linear;
+        &.active {
+            margin-left: 100px;
+            opacity: 1;
+            transition: .7s linear;
+        }
         p {
             margin-block-start: 25px;
             margin-block-end: 25px;
@@ -215,6 +223,7 @@ p {
             line-height: 35px;
             letter-spacing: 0.05em;
             text-transform: capitalize;
+            text-decoration: none;;
             cursor: pointer;
             transition: box-shadow .3s ease;
 
@@ -225,8 +234,12 @@ p {
                 transition: box-shadow .1s ease;
                 box-shadow: 0 2px 2px rgba(0, 0, 0, .5);
             }
-            img {
-                /* padding-top: 5px; */
+            svg {
+                height: 10px;
+                width: 18px;
+                path {
+                    stroke: var(--Black, #000);
+                }
             }
         }
     }
