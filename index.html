@@ -63,46 +63,37 @@
         "description": `Nulla posuere sollicitudin aliquam ultrices. Urna duis convallis convallis tellus id interdum. Nunc pulvinar sapien et ligula ullamcorper. Ut etiam sit amet nisl purus. Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque.`,
         "link": `#`,
     }]
-    console.log(services, "services");
 
-const tabUL = document.querySelector("#home-services");
-const tabMenu =  services.forEach((service, k) => {
-    const createLI = document.createElement("li");
-    createLI.classList.add('tab');
-    if(k == 0){
-        createLI.classList.add('active');
-    }
-    const createSpan = document.createElement("span");
-    const createTitle = document.createTextNode(`${service.title}`);
-    createSpan.appendChild(createTitle);
+    const tabUL = document.querySelector("#home-services");
+    const tabMenu =  services.forEach((service, k) => {
+        const createLI = document.createElement("li");
+            createLI.classList.add('tab');
+            if(k == 0){
+                createLI.classList.add('active');
+            }
+            const createSpan = document.createElement("span");
+            const createTitle = document.createTextNode(`${service.title}`);
+                createSpan.appendChild(createTitle);
+            createLI.appendChild(createSpan);
 
-
-    const xmlns = "http://www.w3.org/2000/svg";
-        const boxWidth = 18;
-        const boxHeight = 10;
-        
-        const createSVG = document.createElementNS(xmlns, "svg");
-            createSVG.setAttributeNS(null, "viewBox", "0 0 " + boxWidth + " " + boxHeight);
-            createSVG.setAttributeNS(null, "width", "100%");
-            createSVG.style.display = "inlin-block";
-
-
-        const pathSVG = document.createElementNS(xmlns, "path");
-            pathSVG.setAttributeNS(null, "d", `M12.9 1L17.4 5M17.4 5L12.9 9M17.4 5H1.40002`);
-            pathSVG.setAttribute("stroke", "#D3A79D");
-            pathSVG.setAttribute("stroke-width", "1.2");
-            pathSVG.setAttribute("stroke-linecap","round");
-            pathSVG.setAttribute("stroke-linejoin", "round");
-        
-        createSVG.appendChild(pathSVG);
-
-
-        createLI.appendChild(createSpan);
-        createLI.appendChild(createSVG);
+            const xmlns = "http://www.w3.org/2000/svg";
+                const boxWidth = 18;
+                const boxHeight = 10;
+                const createSVG = document.createElementNS(xmlns, "svg");
+                    createSVG.setAttributeNS(null, "viewBox", "0 0 " + boxWidth + " " + boxHeight);
+                    createSVG.setAttributeNS(null, "width", "100%");
+                    createSVG.style.display = "inlin-block";
+                    const pathSVG = document.createElementNS(xmlns, "path");
+                        pathSVG.setAttributeNS(null, "d", `M12.9 1L17.4 5M17.4 5L12.9 9M17.4 5H1.40002`);
+                        pathSVG.setAttribute("stroke", "#D3A79D");
+                        pathSVG.setAttribute("stroke-width", "1.2");
+                        pathSVG.setAttribute("stroke-linecap","round");
+                        pathSVG.setAttribute("stroke-linejoin", "round");
+                    createSVG.appendChild(pathSVG);
+                createLI.appendChild(createSVG);
 
         tabUL.appendChild(createLI);
-});
-
+    });
 
 
     const tabs = document.querySelectorAll(".tab");
