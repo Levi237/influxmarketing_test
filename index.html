@@ -17,25 +17,8 @@
             </p>
         </div>
         <div class="nav services">
-            <ul>
-                <li class="tab active">
-                    <span>Dermal Fillers</span>
-                </li>
-                <li class="tab">
-                    <span>CoolSculpting Elite</span>
-                </li>
-                <li class="tab">
-                    <span>QWO</span>
-                </li>
-                <li class="tab">
-                    <span>Advanced Lasers</span>
-                </li>
-                <li class="tab">
-                    <span>Microneedling</span>
-                </li>
-                <li class="tab">
-                    <span>Botox</span>
-                </li>
+            <ul id="home-services">
+
             </ul>
         </div>
         <div class="wrapper services">
@@ -56,34 +39,45 @@
 </html>
 <script>
     const services = [{
-        "h2": `Dermal Fillers`,
-        "p": `Facial volume loss begins in most people once they hit their mid-30s. Don't let the loss of youthful volume dictate your appearance! Take action with our collection of Dermal Fillers, such as Restylane ® and Juvederm®. Our dermal fillers are FDA-approved to lift and add volume to wrinkles, fine lines, or enhance your lips. Experience smoother, younger-looking skin today!`,
-        "a": `#`,
+        "title": `Dermal Fillers`,
+        "description": `Facial volume loss begins in most people once they hit their mid-30s. Don't let the loss of youthful volume dictate your appearance! Take action with our collection of Dermal Fillers, such as Restylane ® and Juvederm®. Our dermal fillers are FDA-approved to lift and add volume to wrinkles, fine lines, or enhance your lips. Experience smoother, younger-looking skin today!`,
+        "link": `#`,
     },{
-        "h2": `CoolSculpting Elite`,
-        "p": `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Metus aliquam eleifend mi in nulla. `,
-        "a": `#`,
+        "title": `CoolSculpting Elite`,
+        "description": `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Metus aliquam eleifend mi in nulla. `,
+        "link": `#`,
     },{
-        "h2": `QWO`,
-        "p": `Netus et malesuada fames ac turpis egestas. Ut sem nulla pharetra diam sit amet nisl. In nisl nisi scelerisque eu ultrices vitae auctor eu augue. Tincidunt arcu non sodales neque sodales ut etiam. Tristique magna sit amet purus gravida. Mauris ultrices eros in cursus turpis. `,
-        "a": `#`,
+        "title": `QWO`,
+        "description": `Netus et malesuada fames ac turpis egestas. Ut sem nulla pharetra diam sit amet nisl. In nisl nisi scelerisque eu ultrices vitae auctor eu augue. Tincidunt arcu non sodales neque sodales ut etiam. Tristique magna sit amet purus gravida. Mauris ultrices eros in cursus turpis. `,
+        "link": `#`,
     },{
-        "h2": `Advanced Lasers`,
-        "p": `Facilisis magna etiam tempor orci eu lobortis. Nulla facilisi etiam dignissim diam quis enim lobortis. Diam volutpat commodo sed egestas egestas fringilla phasellus. Porta nibh venenatis cras sed felis eget velit aliquet sagittis. Cras adipiscing enim eu turpis. Nullam non nisi est sit amet facilisis magna etiam tempor.`,
-        "a": `#`,
+        "title": `Advanced Lasers`,
+        "description": `Facilisis magna etiam tempor orci eu lobortis. Nulla facilisi etiam dignissim diam quis enim lobortis. Diam volutpat commodo sed egestas egestas fringilla phasellus. Porta nibh venenatis cras sed felis eget velit aliquet sagittis. Cras adipiscing enim eu turpis. Nullam non nisi est sit amet facilisis magna etiam tempor.`,
+        "link": `#`,
     },{
-        "h2": `Microneedling`,
-        "p": `Risus feugiat in ante metus dictum. Id leo in vitae turpis. A cras semper auctor neque vitae tempus. Nisi quis eleifend quam adipiscing vitae proin. Tincidunt eget nullam non nisi est sit amet. Rhoncus est pellentesque elit ullamcorper dignissim. Aliquam nulla facilisi cras fermentum odio eu feugiat pretium nibh. Aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices. Aliquet nec ullamcorper sit amet risus nullam. `,
-        "a": `#`,
+        "title": `Microneedling`,
+        "description": `Risus feugiat in ante metus dictum. Id leo in vitae turpis. A cras semper auctor neque vitae tempus. Nisi quis eleifend quam adipiscing vitae proin. Tincidunt eget nullam non nisi est sit amet. Rhoncus est pellentesque elit ullamcorper dignissim. Aliquam nulla facilisi cras fermentum odio eu feugiat pretium nibh. Aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices. Aliquet nec ullamcorper sit amet risus nullam. `,
+        "link": `#`,
     },{
-        "h2": `Botox`,
-        "p": `Nulla posuere sollicitudin aliquam ultrices. Urna duis convallis convallis tellus id interdum. Nunc pulvinar sapien et ligula ullamcorper. Ut etiam sit amet nisl purus. Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque.`,
-        "a": `#`,
+        "title": `Botox`,
+        "description": `Nulla posuere sollicitudin aliquam ultrices. Urna duis convallis convallis tellus id interdum. Nunc pulvinar sapien et ligula ullamcorper. Ut etiam sit amet nisl purus. Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque.`,
+        "link": `#`,
     }]
-    console.log(services, "services")
-    const tabs = document.querySelectorAll(".tab");
-    const addArrow = tabs.forEach((tab) => {
-        const xmlns = "http://www.w3.org/2000/svg";
+    console.log(services, "services");
+
+const tabUL = document.querySelector("#home-services");
+const tabMenu =  services.forEach((service, k) => {
+    const createLI = document.createElement("li");
+    createLI.classList.add('tab');
+    if(k == 0){
+        createLI.classList.add('active');
+    }
+    const createSpan = document.createElement("span");
+    const createTitle = document.createTextNode(`${service.title}`);
+    createSpan.appendChild(createTitle);
+
+
+    const xmlns = "http://www.w3.org/2000/svg";
         const boxWidth = 18;
         const boxHeight = 10;
         
@@ -101,8 +95,18 @@
             pathSVG.setAttribute("stroke-linejoin", "round");
         
         createSVG.appendChild(pathSVG);
-        tab.appendChild(createSVG);
-    });
+
+
+        createLI.appendChild(createSpan);
+        createLI.appendChild(createSVG);
+
+        tabUL.appendChild(createLI);
+});
+
+
+
+    const tabs = document.querySelectorAll(".tab");
+
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
             tabs.forEach(tabThis => tabThis.classList.remove("active"));
