@@ -183,7 +183,6 @@ p {
         transform: translate(0%, -50%);
         width: 474px;
         padding-left: 100px;
-        margin-left: 100px;
         padding: 35px 100px 55px;
         background-image: 
             linear-gradient(to bottom, rgba(255,255,255, .5) 0%, rgba(255, 255, 255, 0.5) 100%),
@@ -223,7 +222,7 @@ p {
             line-height: 35px;
             letter-spacing: 0.05em;
             text-transform: capitalize;
-            text-decoration: none;;
+            text-decoration: none;
             cursor: pointer;
             transition: box-shadow .3s ease;
 
