@@ -1,6 +1,6 @@
 :root {
     --hsl-black: 0, 0%, 0%;
-    --hsl-peach: 11, 80%, 92%;
+    --hsl-peach: 11, 39%, 72%;
     --Black: hsl(var(--hsl-black));
     --Peach: hsl(var(--hsl-peach));
     --side-pad: 100px;
@@ -13,6 +13,7 @@ h1 {
     /* Title */
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #000;
+    paint-order: stroke fill;
     font-family: "IvyPresto Display";
     font-size: 80px;
     font-style: normal;
@@ -35,11 +36,12 @@ h3 {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #000;
+    paint-order: stroke fill;
     font-family: Poppins;
     font-size: 18px;
     font-style: italic;
     font-weight: 300;
-    line-height: 23px; /* 127.778% */
+    line-height: 23px; /* 127.2578% */
     letter-spacing: 1.8px;
     text-transform: uppercase;
 }
@@ -55,25 +57,79 @@ p {
 }
 .nav.services {
 
-
-li {
-    cursor: pointer;
-    svg {
-        height: 10px;
-        width: 18px;
-    }
-}    
-li:hover {
-    transition: all .3s linear;
-    svg {
-        transition: all .3s linear;
-        transform: rotate(90deg);
-    }
+ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
 }
+    li {
+        --_shadow:  0px 4px 4px rgba(0, 0, 0, 0.25);
+
+        cursor: pointer;
+        color: var(--Black, #000);
+
+        color: var(--Black, #000);
+        font-family: Poppins;
+        font-size: 22px;
+        line-height: 5px;;
+        font-style: normal;
+        font-weight: 300;
+        
+        letter-spacing: -0.02em;
+        transition: all .3s linear;
+        * {
+            transition: all .3s linear;
+        }
+        /* text-decoration-line: underline; */
+        span {
+            height: 10px;
+            margin-bottom: -10px;
+            display: inline-block;
+            border-bottom: 1.5px solid black;
+        }
+
+        svg {
+            height: 10px;
+            width: 18px;
+            overflow: visible !important;
+            path {
+                stroke: var(--Black, #000);
+            }
+        }
+        &:hover {            
+            text-shadow: var(--_shadow);
+    
+            path {        
+                -webkit-filter: drop-shadow( var(--_shadow));
+                filter: drop-shadow( var(--_shadow));
+            }
+
+        }
+    }
 
 
     li.active {
-        transform: rotate(90deg);
+        color: var(--Peach, #D3A79D);
+        transition: all .3s linear;
+        span {
+            text-shadow: var(--_shadow);
+            /* box-shadow: var(--_shadow); */
+            overflow: visible;
+            border-bottom: 1.5px solid var(--Peach, #D3A79D);
+            /* filter: drop-shadow( 0px 4px 4px  rgba(0, 0, 0, .25)); */
+        }
+        svg {
+            transition: all .3s linear;
+            transform: rotate(90deg) translate(-3px, 0px);
+            path {
+                transition: all .3s linear;
+                stroke: var(--Peach, #D3A79D);
+                -webkit-filter: drop-shadow( 3px 0px 3px rgba(0, 0, 0, .5));
+                filter: drop-shadow( 3px 0px 3px  rgba(0, 0, 0, .5));
+            }
+        }
     }
 }
 .container.services {
