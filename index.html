@@ -77,4 +77,11 @@
         createSVG.appendChild(pathSVG);
         tab.appendChild(createSVG);
     });
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(tabThis => tabThis.classList.remove("active"));
+            tab.classList.add("active");
+        });
+    });
+
 </script>
