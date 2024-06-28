@@ -101,6 +101,27 @@ p {
         
         letter-spacing: -0.02em;
         transition: all .3s linear;
+        
+        &.active {
+            color: var(--Text-Peach, #D3A79D);
+            transition: all .3s linear;
+            span {
+                text-shadow: var(--shadow);
+                border-bottom: 1.5px solid var(--Text-Peach, #D3A79D);
+                overflow: visible;
+            }
+            svg {
+                transition: all .3s linear;
+                transform: rotate(90deg) translate(-2px, 0px);
+                path {
+                    transition: all .3s linear;
+                    stroke: var(--Text-Peach, #D3A79D);
+                    -webkit-filter: drop-shadow( 3px 0px 3px rgba(0, 0, 0, .5));
+                    filter: drop-shadow( 3px 0px 3px  rgba(0, 0, 0, .5));
+                }
+            }
+        }
+
         * {
             transition: all .3s linear;
         }
@@ -131,26 +152,6 @@ p {
         }
     }
 
-
-    li.active {
-        color: var(--Text-Peach, #D3A79D);
-        transition: all .3s linear;
-        span {
-            text-shadow: var(--shadow);
-            border-bottom: 1.5px solid var(--Text-Peach, #D3A79D);
-            overflow: visible;
-        }
-        svg {
-            transition: all .3s linear;
-            transform: rotate(90deg) translate(-2px, 0px);
-            path {
-                transition: all .3s linear;
-                stroke: var(--Text-Peach, #D3A79D);
-                -webkit-filter: drop-shadow( 3px 0px 3px rgba(0, 0, 0, .5));
-                filter: drop-shadow( 3px 0px 3px  rgba(0, 0, 0, .5));
-            }
-        }
-    }
 }
 .wrapper.services {
     position: relative;
