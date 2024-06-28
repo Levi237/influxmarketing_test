@@ -23,16 +23,8 @@
         </div>
         <div class="wrapper services">
             <img class="background-image" src="services-section-background.jpg" width="100%" height="100%" loading="lazy"/>
-            <div class="container">
-                <div class="box" style="background-image: url('marble-box.jpg')">
-                    <h2>Dermal Fillers</h2>
-                    <p>
-                        Facial volume loss begins in most people once they hit their mid-30s. Don't let the loss of youthful volume dictate your appearance! Take action with our collection of Dermal Fillers, such as Restylane ® and Juvederm®. Our dermal fillers are FDA-approved to lift and add volume to wrinkles, fine lines, or enhance your lips. Experience smoother, younger-looking skin today!
-                    </p>
-                    <a href="#">
-                        <span>Dermal Fillers</span><img src="arrow.svg"/>
-                    </a>
-                </div>
+            <div id="services-info" class="container">
+ 
             </div>
         </div>
     </body>
@@ -64,13 +56,12 @@
         "link": `#`,
     }]
 
-    const tabUL = document.querySelector("#home-services");
-    const tabMenu =  services.forEach((service, k) => {
+    const servicesUL = document.querySelector("#home-services");
+    const servicesMenu =  services.forEach((service, k) => {
         const createLI = document.createElement("li");
             createLI.classList.add('tab');
-            if(k == 0){
-                createLI.classList.add('active');
-            }
+            if(k == 0) createLI.classList.add('active');
+
             const createSpan = document.createElement("span");
             const createTitle = document.createTextNode(`${service.title}`);
                 createSpan.appendChild(createTitle);
@@ -92,7 +83,20 @@
                     createSVG.appendChild(pathSVG);
                 createLI.appendChild(createSVG);
 
-        tabUL.appendChild(createLI);
+        servicesUL.appendChild(createLI);
+    });
+
+    const serviceBox =  services.forEach((service, k) => {
+        const boxParent = document.getElementById("services-info");
+        const createBox = document.createElement("div");
+            createBox.classList.add("box");
+            const createTitle = document.createElement("h2");
+                createTitle.appendChild(document.createTextNode(`${service.title}`));
+            createBox.appendChild(createTitle);
+            const createDescription = document.createElement("p");
+                createDescription.appendChild(document.createTextNode(`${service.description}`));
+            createBox.appendChild(createDescription);  
+                boxParent.appendChild(createBox);
     });
 
 
