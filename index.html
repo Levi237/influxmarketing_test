@@ -90,7 +90,7 @@
         const boxParent = document.getElementById("services-info");
         const createBox = document.createElement("div");
             createBox.classList.add("box");
-            if(k == 0) createBox.classList.add('active');
+            if(k === 0) createBox.classList.add('active');
             const createTitle = document.createElement("h2");
                 createTitle.appendChild(document.createTextNode(`${service.title}`));
             createBox.appendChild(createTitle);
@@ -122,8 +122,6 @@
 
                 createLink.appendChild(createSVG); 
             createBox.appendChild(createLink);  
-
-
             boxParent.appendChild(createBox);
     });
 
@@ -136,10 +134,7 @@
             tabs.forEach(thisTab => thisTab.classList.remove("active"));
             boxes.forEach((thisBox, k) => {
                 thisBox.classList.remove("active")
-                if (key == k){
-                    thisBox.classList.add("active")
-                }
-
+                if (key === k) thisBox.classList.add("active");
             });
             tab.classList.add("active");
         });
