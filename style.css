@@ -63,6 +63,7 @@ p {
 .text-shadow {
     text-shadow: var(--shadow);
 }
+
 .wrapper.intro {
     max-width: 800px;
     padding: 0 100px;
