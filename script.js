@@ -22,7 +22,7 @@ const services = [{
     "title": `Botox`,
     "description": `Nulla posuere sollicitudin aliquam ultrices. Urna duis convallis convallis tellus id interdum. Nunc pulvinar sapien et ligula ullamcorper. Ut etiam sit amet nisl purus. Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque.`,
     "link": `#`,
-}]
+}];
 
 const servicesMenu =  services.forEach((service, k) => {
     const servicesUL = document.querySelector("#home-services");
@@ -36,20 +36,20 @@ const servicesMenu =  services.forEach((service, k) => {
         createLI.appendChild(createSpan);
 
         const xmlns = "http://www.w3.org/2000/svg";
-            const boxWidth = 18;
-            const boxHeight = 10;
-            const createSVG = document.createElementNS(xmlns, "svg");
-                createSVG.setAttributeNS(null, "viewBox", "0 0 " + boxWidth + " " + boxHeight);
-                createSVG.setAttributeNS(null, "width", "100%");
-                createSVG.style.display = "inlin-block";
-                const pathSVG = document.createElementNS(xmlns, "path");
-                    pathSVG.setAttributeNS(null, "d", `M12.9 1L17.4 5M17.4 5L12.9 9M17.4 5H1.40002`);
-                    pathSVG.setAttribute("stroke", "#000");
-                    pathSVG.setAttribute("stroke-width", "1.2");
-                    pathSVG.setAttribute("stroke-linecap","round");
-                    pathSVG.setAttribute("stroke-linejoin", "round");
-                createSVG.appendChild(pathSVG);
-            createLI.appendChild(createSVG);
+        const boxWidth = 18;
+        const boxHeight = 10;
+        const createSVG = document.createElementNS(xmlns, "svg");
+            createSVG.setAttributeNS(null, "viewBox", "0 0 " + boxWidth + " " + boxHeight);
+            createSVG.setAttributeNS(null, "width", "100%");
+            createSVG.style.display = "inlin-block";
+            const pathSVG = document.createElementNS(xmlns, "path");
+                pathSVG.setAttributeNS(null, "d", `M12.9 1L17.4 5M17.4 5L12.9 9M17.4 5H1.40002`);
+                pathSVG.setAttribute("stroke", "#000");
+                pathSVG.setAttribute("stroke-width", "1.2");
+                pathSVG.setAttribute("stroke-linecap","round");
+                pathSVG.setAttribute("stroke-linejoin", "round");
+            createSVG.appendChild(pathSVG);
+        createLI.appendChild(createSVG);
 
     servicesUL.appendChild(createLI);
 });
@@ -99,7 +99,7 @@ tabs.forEach((tab, key) => {
     tab.addEventListener('click', () => {
         tabs.forEach(thisTab => thisTab.classList.remove("active"));
         boxes.forEach((thisBox, k) => {
-            thisBox.classList.remove("active")
+            thisBox.classList.remove("active");
             if (key === k) thisBox.classList.add("active");
         });
         tab.classList.add("active");
