@@ -86,7 +86,9 @@ p {
     }
 
     li {
-
+        display: flex;
+        align-items: center;
+        gap: 7px;
         cursor: pointer;
         color: var(--Black, #000);
 
@@ -105,7 +107,7 @@ p {
         span {
             display: inline-block;
             height: 10px;
-            margin-bottom: -10px;
+            margin-bottom: -7px;
             border-bottom: 1.5px solid black;
         }
 
@@ -172,17 +174,21 @@ p {
         position: absolute;
         top:0;
         z-index: 1;
-        display: flex;
+        /* display: flex;
         align-items: center;
-        justify-self: center;
+        justify-self: center; */
         height: 100%;
         width: 100%;
     }
     .box {
+        position: absolute;
+        top: 50%;
+        transform: translate(0%, -50%);
         width: 474px;
         padding-left: 100px;
         margin-left: 100px;
         padding: 35px 100px 55px;
+        background-image: url('marble-box.jpg');
         background-repeat: no-repeat;
         background-size: cover;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -190,7 +196,6 @@ p {
         p {
             margin-block-start: 25px;
             margin-block-end: 25px;
-
             text-decoration-line: underline;
         }
 
