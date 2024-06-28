@@ -194,8 +194,8 @@ p {
             text-decoration-line: underline;
         }
 
-        button {
-            display: flex;
+        a {
+            display: inline-flex;
             padding: 9px 25px 9px 25px;
             align-items: center;
             gap: 7px;
