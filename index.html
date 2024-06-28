@@ -56,8 +56,8 @@
         "link": `#`,
     }]
 
-    const servicesUL = document.querySelector("#home-services");
     const servicesMenu =  services.forEach((service, k) => {
+        const servicesUL = document.querySelector("#home-services");
         const createLI = document.createElement("li");
             createLI.classList.add('tab');
             if(k == 0) createLI.classList.add('active');
@@ -125,10 +125,8 @@
             boxParent.appendChild(createBox);
     });
 
-
     const tabs = document.querySelectorAll(".tab");
     const boxes = document.querySelectorAll(".box");
-
     tabs.forEach((tab, key) => {
         tab.addEventListener('click', () => {
             tabs.forEach(thisTab => thisTab.classList.remove("active"));
@@ -139,5 +137,4 @@
             tab.classList.add("active");
         });
     });
-
 </script>
