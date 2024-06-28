@@ -14,7 +14,6 @@ h1 {
     margin-block-start: 0;
     margin-block-end: 0;
 
-    text-shadow: var(--shadow);
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #000;
     paint-order: stroke fill;
@@ -105,7 +104,7 @@ p {
         * {
             transition: all .3s linear;
         }
-        /* text-decoration-line: underline; */
+
         span {
             display: inline-block;
             height: 10px;
@@ -124,16 +123,17 @@ p {
         &.active {
             color: var(--Text-Peach, #D3A79D);
             transition: all .3s linear;
+            * {
+                transition: all .3s linear;
+            }
             span {
                 text-shadow: var(--shadow);
                 border-bottom: 1.5px solid var(--Text-Peach, #D3A79D);
                 overflow: visible;
             }
             svg {
-                transition: all .3s linear;
-                transform: rotate(90deg) translate(-2px, 0px);
+            transform: rotate(90deg) translate(-2px, 0px);
                 path {
-                    transition: all .3s linear;
                     stroke: var(--Text-Peach, #D3A79D);
                     -webkit-filter: drop-shadow( 3px 0px 3px rgba(0, 0, 0, .5));
                     filter: drop-shadow( 3px 0px 3px  rgba(0, 0, 0, .5));
