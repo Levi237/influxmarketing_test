@@ -41,7 +41,7 @@ const servicesMenu =  services.forEach((service, k) => {
         const createSVG = document.createElementNS(xmlns, "svg");
             createSVG.setAttributeNS(null, "viewBox", "0 0 " + boxWidth + " " + boxHeight);
             createSVG.setAttributeNS(null, "width", "100%");
-            createSVG.style.display = "inlin-block";
+            createSVG.style.display = "inline-block";
             const pathSVG = document.createElementNS(xmlns, "path");
                 pathSVG.setAttributeNS(null, "d", `M12.9 1L17.4 5M17.4 5L12.9 9M17.4 5H1.40002`);
                 pathSVG.setAttribute("stroke", "#000");
